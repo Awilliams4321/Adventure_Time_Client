@@ -9,6 +9,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // command for composeWithDevTools: npm i redux-devtools-extension
 
 import App from './components/App'
+import { rootReducer } from './reducers/rootReducer'
 
 const store = createStore(
     rootReducer,
