@@ -1,9 +1,10 @@
 import React from 'react';
+import TrailsComponent from './TrailsComponent'
 
 const App = () => {
     return (
         <div>
-            Hello World!
+            <TrailsComponent />
         </div>
     );
 };
