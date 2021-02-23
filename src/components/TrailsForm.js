@@ -51,4 +51,4 @@ class TrailsForm extends Component {
     }
 }
 
-export default TrailsForm;
+export default connect(null, { addTrail })(TrailsForm);
