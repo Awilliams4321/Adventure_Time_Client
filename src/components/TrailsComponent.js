@@ -6,7 +6,7 @@ class TrailsComponent extends Component {
     componentDidMount() {
         this.props.fetchTrails()
     }
-    
+
     render() {
         return (
             <div>
@@ -16,4 +16,4 @@ class TrailsComponent extends Component {
     }
 }
 
-export default connect(null, { fetchTrails})(TrailsComponent);
+export default connect(null, { fetchTrails })(TrailsComponent);
