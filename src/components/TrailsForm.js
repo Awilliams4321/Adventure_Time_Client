@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addTrail } from '../actions/trailsActions'
 
 class TrailsForm extends Component {
     state = {
