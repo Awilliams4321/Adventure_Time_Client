@@ -21,6 +21,11 @@ class TrailsForm extends Component {
         })
     }
 
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.addTrail(this.state)
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
