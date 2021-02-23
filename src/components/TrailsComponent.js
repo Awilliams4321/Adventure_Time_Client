@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from 'redux'
+import { connect } from 'react-redux'
 import { fetchTrails } from '../actions/trailsActions'
 
 class TrailsComponent extends Component {
@@ -12,4 +12,4 @@ class TrailsComponent extends Component {
     }
 }
 
-export default TrailsComponent;
+export default connect(null, { fetchTrails})(TrailsComponent);
