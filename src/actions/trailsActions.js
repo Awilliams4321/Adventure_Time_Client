@@ -5,3 +5,14 @@ export const fetchTrails = () => {
         .then(trails => dispatch({type: 'FETCH_TRAILS', payload: trails}))
     }
 }
+
+export const addTrail = trail => {
+    fetch("http://localhost:3000/trails", {
+        method: "POST",
+        body: JSON.stringify(trail),
+        headers: { "Content-Type": "application/json"}
+
+    })
+    .then(resp => resp.json())
+    .then(trail => dispatch({type: 'ADD_TRAIL', payload: trail}))
+}
