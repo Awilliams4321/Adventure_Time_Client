@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchTrails } from '../actions/trailsActions'
+import TrailsForm from './TrailsForm'
 
 class TrailsComponent extends Component {
     componentDidMount() {
@@ -10,7 +11,7 @@ class TrailsComponent extends Component {
     render() {
         return (
             <div>
-                Trails Container
+                <TrailsForm />
             </div>
         );
     }
