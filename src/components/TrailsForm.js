@@ -23,7 +23,7 @@ class TrailsForm extends Component {
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <label>Name:</label>
                 <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/>
                 < br/> 
