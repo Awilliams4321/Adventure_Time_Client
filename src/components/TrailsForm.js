@@ -11,6 +11,14 @@ class TrailsForm extends Component {
         favorite: ""
     }
 
+    handleChange = e => {
+        const { name, value } = e.target
+
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
         return (
             <form>
@@ -18,7 +26,7 @@ class TrailsForm extends Component {
                 <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/>
                 < br/> 
                 <label>Location:</label>
-                <input type="text" value={this.state.location onChange={this.handleChange} name="location"/>
+                <input type="text" value={this.state.location} onChange={this.handleChange} name="location"/>
                 < br/> 
                 <label>Length:</label>
                 <input type="text" value={this.state.length} onChange={this.handleChange} name="length"/>
@@ -38,6 +46,7 @@ class TrailsForm extends Component {
                 <input type="submit" value="Add Trail" />
             </form>
         );
+    }
 }
 
 export default TrailsForm;
