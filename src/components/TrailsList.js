@@ -11,4 +11,8 @@ class TrailsList extends Component {
     }
 }
 
-export default TrailsList;
+const mapStateToProps = state => {
+    return {trails: state.trails}
+}
+
+export default connect(mapStateToProps)(TrailsList);
