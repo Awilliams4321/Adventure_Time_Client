@@ -8,7 +8,7 @@ const TrailsList =({ trails }) => {
                 {trail.name} - {trail.location}<br/>
                 Length: {trail.length}<br/>
                 Est. Time: {trail.estimated_time}<br/>
-                Intensity: {trail.intensity}<br/>
+                Intensity: {trail.intensity}<br/> 
                 </li></ul>)}
         </div>
     )
