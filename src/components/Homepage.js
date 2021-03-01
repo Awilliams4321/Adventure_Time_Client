@@ -5,7 +5,6 @@ const Homepage = () => {
     return (
         <div>
             Home Page!
-            <TrailsList />
         </div>
     );
 };
