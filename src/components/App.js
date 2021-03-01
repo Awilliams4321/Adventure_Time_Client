@@ -1,11 +1,11 @@
 import React from 'react';
 import Router from './Router'
-import TrailsComponent from './TrailsComponent'
+import TrailsContainer from './TrailsContainer'
 
 const App = () => {
     return (
         <div>
-            <TrailsComponent />
+            <TrailsContainer />
             <Router />
         </div>
     );
