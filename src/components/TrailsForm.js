@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import TrailsList from './TrailsList'
 import { addTrail } from '../actions/trailsActions'
 
 class TrailsForm extends Component {
     state = {
+        id: "",
         name: "",
         location: "",
         length: "",
@@ -23,7 +26,7 @@ class TrailsForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addTrail(this.state)
+        this.props.addTrail(this.state, this.props.history)
     }
 
     render() {
@@ -43,12 +46,6 @@ class TrailsForm extends Component {
                 < br/> 
                 <label>Intensity Level:</label>
                 <input type="text" value={this.state.intensity} onChange={this.handleChange} name="intensity"/>
-                < br/> 
-                <label>Image:</label>
-                <input type="text" value={this.state.image} onChange={this.handleChange} name="image"/>
-                < br/> 
-                <label>Favorite:</label>
-                <input type="text" value={this.state.favorite} onChange={this.handleChange} name="favorite"/>
                 < br/> 
                 <input type="submit" value="Add Trail" />
             </form>
