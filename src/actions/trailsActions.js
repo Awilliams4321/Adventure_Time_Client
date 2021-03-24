@@ -6,7 +6,7 @@ export const fetchTrails = () => {
     }
 }
 
-export const addTrail = trail => {
+export const addTrail = (trail, history) => {
     return (dispatch) => {
         fetch("http://localhost:3000/trails", {
         method: "POST",
@@ -14,6 +14,25 @@ export const addTrail = trail => {
         headers: { "Content-Type": "application/json"}
     })
     .then(resp => resp.json())
-    .then(trail => dispatch({type: 'ADD_TRAIL', payload: trail}))
+    .then(trail => {
+        dispatch({type: 'ADD_TRAIL', payload: trail})
+        history.push('/trails')
+    })
+    }
+}
+
+export default function deleteTrail(trailId){
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/trails/${trailId}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(message => { 
+            dispatch({type: 'DELETE_TRAIL', payload: trailId})
+        })
+        .catch(error => console.log(error))
     }
 }
