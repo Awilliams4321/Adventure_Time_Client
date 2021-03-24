@@ -29,10 +29,8 @@ export default function deleteTrail(trailId){
                 "Content-Type": "application/json"
             }
         })
-        .then(res => res.json())
-        .then(message => { 
-            dispatch({type: 'DELETE_TRAIL', payload: trailId})
-        })
-        .catch(error => console.log(error))
+        .then(res => dispatch({type: 'DELETE_TRAIL', payload: trailId})
+        )
+        .catch(error => console.error(error))
     }
 }
