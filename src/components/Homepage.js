@@ -4,7 +4,7 @@ import TrailsList from './TrailsList'
 const Homepage = () => {
     return (
         <div>
-            Home Page!
+            <h1> Keep track of all the trails you visit in Colorado! </h1>
         </div>
     );
 };
