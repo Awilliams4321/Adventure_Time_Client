@@ -4,6 +4,11 @@ export const trailsReducer = (state = [], action) => {
             return action.payload
         case 'ADD_TRAIL':
             return [...state, action.payload]    
+        case 'DELETE_TRAIL':
+            const newTrailList = state.trails.filter(trail => trail.id !== action.payload)
+            return {
+                trails: newTrailList
+            }
         default:
             return state
     }
