@@ -1,10 +1,9 @@
-export const favoritesReducer = (state = false, action) => {
+export const favoritesReducer = (state = [], action) => {
     switch(action.type){
         case 'UPDATE_FAVORITES':
-            const favoriteTrails = state.trails.filter(trail => trail.favorite === true)
-            return {
-                favorites: favoriteTrails
-            }
+            console.log(state)
+            console.log(action.payload)
+            return action.payload
             default:
                 return state
     }

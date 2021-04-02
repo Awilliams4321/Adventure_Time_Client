@@ -2,7 +2,7 @@ export default function updateFavorites(trailId){
     return (dispatch) => {
         return fetch(`http://localhost:3000/trails/${trailId}`, {
             method: "PATCH",
-            // body: JSON.stringify(trailId),
+            body: trailId,
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json"
@@ -10,8 +10,7 @@ export default function updateFavorites(trailId){
         })
         .then(res => res.json())
         .then(message => { 
-            dispatch({type: 'UPDATE_FAVORITES', payload: trailId})
+            dispatch({type: 'UPDATE_FAVORITES', payload: trailId.favorite = true})
         })
-        // .catch(error => console.log(error))
     }
 }
