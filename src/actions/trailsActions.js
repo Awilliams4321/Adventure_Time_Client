@@ -19,7 +19,7 @@ export const addTrail = (trail, history) => {
         .then(trail => {
             console.log('d')
             dispatch({type: 'ADD_TRAIL', payload: trail})
-            history.push('/trails')
+            // history.push('/trails')
         })
         console.log('e')
     }
