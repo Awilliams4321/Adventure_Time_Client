@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import TrailsList from './TrailsList'
 import { addTrail } from '../actions/trailsActions'
+import { Redirect } from 'react-router-dom'
 
 class TrailsForm extends Component {
     state = {
@@ -26,11 +27,13 @@ class TrailsForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.addTrail(this.state, this.props.history)
+        this.props.addTrail(this.state)
+        // this.props.history.push('/trails')
     }
 
     render() {
         return (
+            <>
             <form onSubmit={this.handleSubmit}>
                 <label>Name:</label>
                 <input type="text" value={this.state.name} onChange={this.handleChange} name="name"/>
@@ -49,8 +52,14 @@ class TrailsForm extends Component {
                 < br/> 
                 <input type="submit" value="Add Trail" />
             </form>
+            </>
         );
     }
 }
 
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//         addTrail: (trail, history) => dispatch(addTrail(trail, history))
+//     }
+// }
 export default connect(null, { addTrail })(TrailsForm);
