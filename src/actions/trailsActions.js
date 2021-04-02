@@ -7,18 +7,23 @@ export const fetchTrails = () => {
 }
 
 export const addTrail = (trail, history) => {
+    console.log('b')
     return (dispatch) => {
+        console.log('c')
         fetch("http://localhost:3000/trails", {
-        method: "POST",
-        body: JSON.stringify(trail),
-        headers: { "Content-Type": "application/json"}
-    })
-    .then(resp => resp.json())
-    .then(trail => {
-        dispatch({type: 'ADD_TRAIL', payload: trail})
-        history.push('/trails')
-    })
+            method: "POST",
+            body: JSON.stringify(trail),
+            headers: { "Content-Type": "application/json"}
+        })
+        .then(resp => resp.json())
+        .then(trail => {
+            console.log('d')
+            dispatch({type: 'ADD_TRAIL', payload: trail})
+            history.push('/trails')
+        })
+        console.log('e')
     }
+    console.log('f')
 }
 
 export default function deleteTrail(trailId){
