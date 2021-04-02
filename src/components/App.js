@@ -8,8 +8,8 @@ const App = () => {
         <div>
             <h1>Adventure Time!</h1>
             <NavBar />
-            {/* <TrailsContainer /> */}
-            <Routes />
+            <TrailsContainer />
+            {/* <Routes /> */}
         </div>
     );
 };
