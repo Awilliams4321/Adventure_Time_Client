@@ -28,7 +28,7 @@ class TrailsForm extends Component {
     handleSubmit = e => {
         e.preventDefault()
         this.props.addTrail(this.state)
-        // this.props.history.push('/trails')
+        this.props.history.push('/trails')
     }
 
     render() {
@@ -62,4 +62,4 @@ class TrailsForm extends Component {
 //         addTrail: (trail, history) => dispatch(addTrail(trail, history))
 //     }
 // }
-export default connect(null, { addTrail })(TrailsForm);
+export default withRouter(connect(null, { addTrail })(TrailsForm));
