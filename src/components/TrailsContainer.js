@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchTrails } from '../actions/trailsActions'
 import TrailPage from './TrailPage'
 import { Switch, Route } from 'react-router-dom'
-// import TrailsList from './TrailsList'
+import Favorites from './Favorites'
 import TrailsForm from './TrailsForm'
 import deleteTrail from '../actions/trailsActions'
 import updateFavorites from '../actions/favoritesActions'
@@ -38,12 +38,17 @@ class TrailsContainer extends Component {
         
         return (
             <ul>
-                <Route exact path="/trails">
-                {this.props.trails.map(trail => <TrailPage trail={trail}/>)}
-                </Route>
-                <Route path="/trails/new">
-                    <TrailsForm />
-                </Route>
+                <Switch>
+                    <Route exact path="/trails">
+                    {this.props.trails.map(trail => <TrailPage trail={trail}/>)}
+                    </Route>
+                    <Route path="/trails/new">
+                        <TrailsForm />
+                    </Route>
+                    <Route path="/trails/favorites">
+                        <Favorites />
+                    </Route>
+                </Switch>
             </ul>
             
         );
