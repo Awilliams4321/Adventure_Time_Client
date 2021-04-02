@@ -4,7 +4,7 @@ import { fetchTrails } from '../actions/trailsActions'
 import TrailPage from './TrailPage'
 import { Switch, Route } from 'react-router-dom'
 // import TrailsList from './TrailsList'
-// import TrailsForm from './TrailsForm'
+import TrailsForm from './TrailsForm'
 import deleteTrail from '../actions/trailsActions'
 import updateFavorites from '../actions/favoritesActions'
 import { Button } from 'reactstrap';
@@ -40,6 +40,9 @@ class TrailsContainer extends Component {
             <ul>
                 <Route exact path="/trails">
                 {this.props.trails.map(trail => <TrailPage trail={trail}/>)}
+                </Route>
+                <Route path="/trails/new">
+                    <TrailsForm />
                 </Route>
             </ul>
             
